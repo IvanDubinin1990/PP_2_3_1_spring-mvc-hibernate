@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../../resources/static/styles/style_for_edit_pages.css" rel="stylesheet"> <!-- DELETE -->
+    <title>Edit user</title>
+</head>
+<body>
+<h2>Edit User</h2>
+<form th:method="PATCH" th:action="@{/update}" th:object="${user}">
+    <input type="hidden" name="id" th:value="${user.getId()}">
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" th:field="*{name}" id="name"/></td>
+        </tr>
+        <tr>
+            <td>Surname: </td>
+            <td><input type="text" th:field="*{surname}" id="surname"/></td>
+        </tr>
+        <tr>
+            <td>Department: </td>
+            <td><input type="text" th:field="*{department}" id="department"/></td>
+        </tr>
+        <tr>
+            <td>Salary: </td>
+            <td><input type="text" th:field="*{salary}" id="salary"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="submit" value="Update"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
